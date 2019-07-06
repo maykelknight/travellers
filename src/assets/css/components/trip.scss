@@ -1,0 +1,64 @@
+.trip-component {
+  width: 300px;
+  height: 440px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  margin: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  .trip-image-wrapper {
+    position: relative;
+
+    .trip-image {
+      width: 350px;
+      height: 200px;
+    }
+
+    .trip-price {
+      position: absolute;
+      background: limegreen;
+      color: #fff;
+      bottom: 20px;
+      right: 20px;
+      padding: 5px 10px;
+    }
+  }
+
+
+  .trip-details {
+    margin: 15px;
+
+    .trip-name {
+      text-transform: uppercase;
+    }
+
+    .trip-description {
+
+    }
+    .trip-extras {
+      border-top: 1px solid #ddd;
+      margin-top: 10px;
+      padding-top: 10px;
+      text-transform: uppercase;
+
+      .stars-wrapper {
+        display: inline-block;
+
+        .star {
+          width: 20px;
+          height: 23px;
+          display: inline-block;
+          font-size: 20px;
+
+          &:before {
+            content: "\2606";
+          }
+
+          &.active:before {
+            content: "\2605";
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,9 @@
+@import "./common.scss";
+@import "~bulma/bulma.sass";
+
+@import "./pages/Home";
+
+@import "./components/Trip";
+@import "./components/TripsGrid";
+@import "./components/starRatingComponent";
+@import "./components/tripFilters";

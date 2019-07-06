@@ -1,0 +1,45 @@
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.rating-input {
+  float: right;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  margin: 0 0 0 -16px;
+  opacity: 0;
+}
+
+.rating-star {
+  cursor: pointer;
+  position: relative;
+}
+
+.rating-star:before {
+  content: "\2606";
+  font-size: 30px;
+  position: absolute;
+  font-weight: 400;
+  left: 0;
+}
+
+.rating-star:hover:before,
+.rating-input:checked ~ .rating-star:before,
+.rating-star:hover ~ .rating-star:before  {
+  content: "\2605"
+}
+
+.rating:hover .rating-star:hover:before,
+.rating:hover .rating-star:hover ~ .rating-star:before,
+.rating-input:checked ~ .rating-star:before {
+  content: "\2605";
+  color: limegreen;
+}
+
+.rating-star:before,
+.rating:hover .rating-star:before {
+  content: "\2606";
+  color: #aaa
+}
