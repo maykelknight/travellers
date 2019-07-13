@@ -1,0 +1,26 @@
+@import "../utils/colors";
+
+.trip-page {
+
+  .main-info {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 50px;
+  }
+
+  .extras {
+    background: #eeee;
+    margin-bottom: 50px;
+    ul {
+      li {
+        &::before {
+          content: "\2022";
+          color: $primary;
+          font-weight: bold;
+          display: inline-block;
+          width: 1.125em;
+        }
+      }
+    }
+  }
+
+}

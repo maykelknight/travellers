@@ -6,7 +6,11 @@ import StarRating from "./StarRating";
 
 const mapStateToProps = state => (
     {
-        filteredTrips: state.filteredTrips
+        filteredTrips: state.filteredTrips,
+        minCost: state.minCost,
+        maxCost: state.maxCost,
+        minPeriod: state.minPeriod,
+        maxPeriod: state.maxPeriod
     }
 );
 
@@ -16,11 +20,11 @@ const mapDispatchToProps = (dispatch) => (
     }
 );
 
-function TripsFilter ({filteredTrips, filterTrips}) {
+function TripsFilter ({filteredTrips, filterTrips, minCost, maxCost, minPeriod, maxPeriod}) {
 
     const [place, changePlace] = React.useState('');
-    const [maxPrice, changeMaxPrice] = React.useState('');
-    const [periodInDays, changePeriodInDays] = React.useState('');
+    const [maxPrice, changeMaxPrice] = React.useState(maxCost);
+    const [periodInDays, changePeriodInDays] = React.useState(minPeriod);
 
     function onPlaceInput (e) {
         console.log('Change', e.target.value);
@@ -49,9 +53,16 @@ function TripsFilter ({filteredTrips, filterTrips}) {
 
     function onRatingChange (value) {
         filterTrips({
-            filterName: 'hotelStars',
+            filterName: 'rating',
             filterValue: value
         });
+    }
+
+    function setRangeFill(value, minValue, maxValue) {
+        let fillPercentage = ((value - minValue) / (maxValue - minValue)) * 100;
+        return {
+            background: `linear-gradient(90deg, rgb(117, 252, 117) ${fillPercentage}%, rgb(214,214,214) 0%)`
+        }
     }
 
     return (
@@ -73,14 +84,14 @@ function TripsFilter ({filteredTrips, filterTrips}) {
 
                 <div className="filter-label">
                     <h3 className="is-size-6">Max price:</h3>
-                    <span className="has-text-weight-bold">{maxPrice || 0}$</span>
+                    <span className="has-text-weight-bold">{maxPrice}$</span>
                 </div>
-
                 <input type="range"
                        className="range-slider"
                        name="cost"
-                       min="1000"
-                       max="3500"
+                       style={setRangeFill(maxPrice, minCost, maxCost)}
+                       min={minCost}
+                       max={maxCost}
                        onChange={onMaxPriceChanged}
                        value={maxPrice}
                 />
@@ -90,15 +101,17 @@ function TripsFilter ({filteredTrips, filterTrips}) {
             <div className="trip-filters__section">
                 <div className="filter-label">
                     <h3 className="is-size-6">Minimal period:</h3>
-                    <span className="has-text-weight-bold">{periodInDays || 0} days</span>
+                    <span className="has-text-weight-bold">{periodInDays} days</span>
                 </div>
                 <input className="range-slider"
                        type="range"
                        name="periodInDays"
-                       min="0"
-                       max="20"
+                       min={minPeriod}
+                       max={maxPeriod}
+                       style={setRangeFill(periodInDays, minPeriod, maxPeriod)}
                        onChange={onPeriodInDaysChanged}
                        value={periodInDays}
+
                 />
             </div>
 

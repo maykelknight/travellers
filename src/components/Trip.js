@@ -11,13 +11,14 @@ const Trips = ({trip, history}) => {
         return stars
     }
 
-    function test (id) {
-        console.log('ASdz');
+    function goToTripDetails (id) {
+        console.log(trip.id);
         history.push("/trips/" + id);
     }
+
     return (
         <>
-            <div className="trip-component">
+            <div className="trip-component" onClick={() => goToTripDetails(trip.id)}>
 
                 <div className="trip-image-wrapper">
                     <img className="trip-image" src={trip.images[0]}/>
@@ -29,19 +30,15 @@ const Trips = ({trip, history}) => {
                 <div className="trip-details">
                     <p className="trip-name is-size-5">{trip.place}</p>
                     <p className="trip-description">{trip.description.substring(0, 122)}</p>
-                    {/*<Link to={`/trips/${trip.id}`}>*/}
-                    <p onClick={() => test(trip.id)}>Read more -></p>
-                    {/*</Link>*/}
-
                     <div className="trip-extras">
                         <div className="stars-wrapper">
-                            {tripStars(trip.hotelStars)}
+                            {tripStars(trip.rating)}
                         </div>
                     </div>
                 </div>
             </div>
         </>
     )
-}
+};
 
 export default withRouter(Trips);

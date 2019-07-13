@@ -1,0 +1,20 @@
+.image-slider {
+
+  &__list {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+
+    img {
+      max-width: 200px;
+      max-height: 200px;
+      cursor: pointer;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}

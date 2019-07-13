@@ -2,8 +2,15 @@
 @import "~bulma/bulma.sass";
 
 @import "./pages/Home";
+@import "./pages/Trip";
 
 @import "./components/Trip";
 @import "./components/TripsGrid";
 @import "./components/starRatingComponent";
 @import "./components/tripFilters";
+@import "./components/tripFilters";
+@import "./components/imageSlider";
+@import "./components/navbar";
+
+
+@import "./utils/colors";

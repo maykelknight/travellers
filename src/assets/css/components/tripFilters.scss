@@ -1,3 +1,5 @@
+@import "../utils/colors";
+
 .trip-filters {
   background: #eeee;
   padding: 10px 30px;
@@ -40,7 +42,7 @@
     margin: 0 auto;
     display: inherit;
     margin-top: 40px;
-    color: darkcyan;
+    color: $secondary;
   }
 }
 
