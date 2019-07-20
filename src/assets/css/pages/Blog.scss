@@ -1,0 +1,28 @@
+.blog-page {
+
+  .blog-categories {
+    display: flex;
+    justify-content: space-evenly;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #ccc;
+
+    &__category {
+      cursor: pointer;
+      padding: 5px 10px;
+      box-sizing: border-box;
+      border-bottom: 2px solid transparent;
+
+      &.-active {
+        border-bottom: 2px solid #279786;
+      }
+
+      &:hover {
+        border-bottom: 2px solid #279786;
+      }
+    }
+
+  }
+}

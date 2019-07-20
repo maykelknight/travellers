@@ -1,11 +1,14 @@
 import React from 'react';
-import styled from 'styled-components';
+import {withRouter} from "react-router-dom";
 
-export default function Post ({post}) {
+function Post ({post, history}) {
+
+    function goToPost (id) {
+        history.push("/blog/" + id);
+    }
+
     return (
-        <div className="blog-post"  style={{ backgroundImage: "url(" + post.photo + ")" }}>
-            {/*{post ? post.photo : ''}*/}
-
+        <div className="blog-post" style={{backgroundImage: "url(" + post.photo + ")"}} onClick={() => goToPost(post.id)}>
             <div className="blog-post__date">
                 <i class="fa fa-bookmark"></i>{post ? post.date : ''}
             </div>
@@ -16,3 +19,5 @@ export default function Post ({post}) {
         </div>
     )
 }
+
+export default withRouter(Post);

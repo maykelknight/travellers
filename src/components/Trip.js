@@ -12,7 +12,6 @@ const Trips = ({trip, history}) => {
     }
 
     function goToTripDetails (id) {
-        console.log(trip.id);
         history.push("/trips/" + id);
     }
 

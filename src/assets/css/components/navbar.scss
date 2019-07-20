@@ -5,6 +5,11 @@
 
   a {
     color: #fff;
+    &:not(.main-logo) {
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
 
     &:hover, &:active, &:focus {
       background: none;

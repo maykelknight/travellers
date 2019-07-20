@@ -8,6 +8,13 @@ function App () {
         <>
             <Navbar/>
             <CustomRouter/>
+            <footer className="footer mt100">
+                <div className="content has-text-centered">
+                    <p>
+                        Design and implementation <strong>Michał Czapkowicz</strong>. All rights reserved
+                    </p>
+                </div>
+            </footer>
         </>
     );
 }

@@ -2,7 +2,7 @@ import React, {useEffect} from 'react';
 import TripsGrid from "../components/TripsGrid";
 import TripsFilter from "../components/TripsFilter";
 import {connect} from "react-redux";
-import {filterTrips} from "../store/actions/trips";
+import {filterTrips, getTrips} from "../store/actions/trips";
 
 
 const mapStateToProps = state => ({
@@ -13,17 +13,22 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = (dispatch) => (
     {
         filterTrips: filter => dispatch(filterTrips(filter)),
+        getTrips: () => dispatch(getTrips()),
     }
 );
 
-function Trips ({filteredTrips}) {
+function Trips ({filteredTrips, getTrips}) {
+
+    useEffect(() => {
+        getTrips();
+    }, []);
 
     let searchInfo = null;
 
     if(filteredTrips.length) {
-        searchInfo = <div>We found {filteredTrips.length} {filteredTrips.length > 1 ? 'trips' : 'trip'} that meet your requirements</div>
+        searchInfo = <div className="is-size-5 label-in-lines">We found {filteredTrips.length} {filteredTrips.length > 1 ? 'trips' : 'trip'} that met your requirements</div>
     } else {
-        searchInfo = <div>We didnt found any trip that meets your requirements :(</div>
+        searchInfo = <div className="is-size-5 label-in-lines">We didnt found any trip that meets your requirements</div>
     }
 
     return (

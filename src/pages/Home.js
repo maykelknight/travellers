@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 import poster from '../assets/img/poster.jpg';
 import img1 from '../assets/img/img1.jpg';
+import {Link} from "react-router-dom";
 
 import video from '../assets/video/video.mp4';
 import {getTrips} from "../store/actions/trips";
@@ -32,7 +33,9 @@ function Homepage ({getTrips, trips}) {
                     <h2 className="is-size-3 label-in-lines">Explore Our Most Popular Tours</h2>
                     <TripsGrid trips={trips}/>
                     <div className="has-text-centered mt60">
-                        <a className="button is-primary is-medium is-centered">See more</a>
+
+                        <Link to="/trips" className="button is-primary is-medium is-centered" activeClassName="active">See more ></Link>
+
                     </div>
                 </div>
 
@@ -109,6 +112,7 @@ function Homepage ({getTrips, trips}) {
                     <br />
                     <br />
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad delectus dolores fugiat laborum reprehenderit ullam, veniam voluptatibus. Adipisci dolores earum nesciunt obcaecati, quae reiciendis saepe sunt? Est molestiae, quas?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi beatae debitis distinctio ducimus error incidunt iusto modi mollitia natus, nihil perferendis provident quasi quis quisquam quos reprehenderit tempora voluptates!
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi beatae debitis distinctio ducimus error incidunt iusto modi mollitia natus, nihil perferendis provident quasi quis quisquam quos reprehenderit tempora voluptates!
                 </div>
             </section>

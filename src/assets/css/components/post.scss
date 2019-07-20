@@ -9,6 +9,7 @@
   position: relative;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
+  background-position: center;
 
   &:hover {
     transform: translateY(-15px);

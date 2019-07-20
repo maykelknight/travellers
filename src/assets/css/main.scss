@@ -1,8 +1,11 @@
 @import "./common.scss";
+@import "./utils/bulma";
 @import "~bulma/bulma.sass";
 
 @import "./pages/Home";
 @import "./pages/Trip";
+@import "./pages/Blog";
+@import "./pages/Post";
 
 @import "./components/Trip";
 @import "./components/TripsGrid";
