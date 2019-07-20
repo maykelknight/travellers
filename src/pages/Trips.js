@@ -2,12 +2,12 @@ import React, {useEffect} from 'react';
 import TripsGrid from "../components/TripsGrid";
 import TripsFilter from "../components/TripsFilter";
 import {connect} from "react-redux";
-import {filterTrips} from "../store/actions";
+import {filterTrips} from "../store/actions/trips";
 
 
 const mapStateToProps = state => ({
-    trips: state.trips,
-    filteredTrips: state.filteredTrips,
+    trips: state.trips.trips,
+    filteredTrips: state.trips.filteredTrips,
 });
 
 const mapDispatchToProps = (dispatch) => (

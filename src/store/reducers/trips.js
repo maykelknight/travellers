@@ -1,4 +1,4 @@
-import {FILTER_TRIPS, SET_TRIPS} from "../constants/action-types";
+import {FILTER_TRIPS, SET_TRIPS} from "../actionTypes/trips";
 import {findMin, findMax} from "../../helpers/Helpers";
 
 const initialState = {
@@ -20,7 +20,7 @@ const initialState = {
     }
 };
 
-function rootReducer (state = initialState, action) {
+function tripsReducer (state = initialState, action) {
     if (action.type === SET_TRIPS) {
         let minCost = findMin(action.payload, 'cost');
         let maxCost = findMax(action.payload, 'cost');
@@ -42,7 +42,7 @@ function rootReducer (state = initialState, action) {
             filteredTrips = filteredTrips.filter(trip => trip.cost <= filters.cost);
         }
         if (filters.periodInDays !== '') {
-            filteredTrips = filteredTrips.filter(trip => trip.periodInDays <= filters.periodInDays);
+            filteredTrips = filteredTrips.filter(trip => trip.periodInDays >= filters.periodInDays);
         }
         if (filters.rating !== '') {
             filteredTrips = filteredTrips.filter(trip => trip.rating >= filters.rating);
@@ -52,4 +52,4 @@ function rootReducer (state = initialState, action) {
     return state;
 }
 
-export default rootReducer;
+export default tripsReducer;

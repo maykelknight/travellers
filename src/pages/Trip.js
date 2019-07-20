@@ -1,5 +1,5 @@
 import React, {useEffect} from "react";
-import {getTrips} from "../store/actions";
+import {getTrips} from "../store/actions/trips";
 import {connect} from 'react-redux';
 import ImageSlider from '../components/ImageSlider';
 import img2 from '../assets/img/img2.jpg';
@@ -12,21 +12,19 @@ function Trip (props) {
 
     const {match: {params}} = props;
     const trip = props.trips.find(trip => trip.id.toString() === params.id.toString());
-    console.log('trips', props.trips);
-    console.log('trip', trip);
 
     var el = null;
 
     if (trip) {
 
         const firstSection = (
-            <div className="section main-info">
+            <div className="section trip-page__main-info">
                 <div className="columns">
                     <div className="column is-three-fifths">
                         <ImageSlider images={trip.images}/>
                     </div>
                     <div className="column">
-                        <h2 className="is-size-3">{trip.place}</h2>
+                        <h2 className="is-size-3 label-with-line">{trip.place}</h2>
                         <p>{trip.description}</p>
                     </div>
                 </div>
@@ -34,10 +32,10 @@ function Trip (props) {
         );
 
         const secondSection = (
-            <div className="section extras">
+            <div className="section trip-page__extras">
                 <div className="columns ">
                     <div className="column">
-                        <h2 className="is-size-3">Extras</h2>
+                        <h2 className="is-size-4 label-with-line">Extras</h2>
                         <ul>
                             {trip.extras.map(extra => <li>{extra}</li>)}
                         </ul>
@@ -52,7 +50,33 @@ function Trip (props) {
         el = <div className="trip-page">
             <div className="container">
                 {firstSection}
+
+                <div className="trip-page__description">
+                    <div className="has-text-weight-bold is-size-4 label-in-lines">The deal</div>
+                    <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores commodi cupiditate deleniti dignissimos dolorem ducimus enim fuga magnam nesciunt nulla numquam, officiis praesentium quidem repellat similique tempora veritatis vero.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid culpa est ipsam numquam obcaecati praesentium repudiandae velit! Blanditiis deleniti ducimus eligendi, est facilis ipsum quam tempore ullam voluptas voluptates. Assumenda.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eaque earum eligendi eum hic illum in laboriosam, laborum nihil optio perferendis porro, possimus praesentium quasi reiciendis similique soluta sunt, vitae?
+                    </div>
+                </div>
+
                 {secondSection}
+
+                <div className="trip-page__description">
+                    <div className="has-text-weight-bold is-size-4 label-in-lines">Whats included</div>
+                    <div>Lorem ipsum orem ducimus enim fuga magnam nesciunt nulla numquam, officiis praesentium quidem repellat similique tempora veritatis vero.
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid culpa est ipsam numquam obcaecati praesentium repudiandae velit! Blanditiis
+                        deleniti ducimus eligendi, est facilis ipsum quam tempore ullam voluptas voluptates. Assumenda.
+                        <br/>
+                        <br/>
+                        Aliquid culpa est ipsam numquam obcaecati praesentium repudiandae velit! Blanditiis
+                        deleniti ducimus eligendi, est facilis ipsum quam tempore ullam voluptas voluptates. Assumenda.
+                    </div>
+                </div>
+
+                <div className="trip-page__promo">
+                    Explore the glamour of {trip.place} with transport included throughout the trip!
+                </div>
+
             </div>
         </div>
     } else {
@@ -65,7 +89,7 @@ function Trip (props) {
 
 const mapStateToProps = state => (
     {
-        trips: state.trips,
+        trips: state.trips.trips,
     }
 );
 

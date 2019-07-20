@@ -6,11 +6,12 @@
   cursor: pointer;
   border: 1px solid #ccc;
   margin: 20px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  box-shadow: 0 16px 14px -14px grey;
   transition: transform 0.5s ease;
 
   &:hover {
-    transform: translateY(-50px);
+    transform: translateY(-30px);
+
     .trip-image {
       transform: scale(1.5);
     }
@@ -47,6 +48,7 @@
     .trip-description {
 
     }
+
     .trip-extras {
       border-top: 1px solid #ddd;
       margin-top: 10px;

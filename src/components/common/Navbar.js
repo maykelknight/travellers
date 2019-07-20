@@ -1,11 +1,10 @@
 import React from 'react';
 import {Link} from "react-router-dom";
-import logo from '../../assets/img/logo.png';
 
 export default function Navbar () {
     return (
         <>
-            <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
+            <nav className="navbar is-fixed-top box-shadow" role="navigation" aria-label="main navigation">
                 <div className="container">
                     {/*<div className="navbar-brand">*/}
                         {/*<a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">*/}
@@ -15,11 +14,9 @@ export default function Navbar () {
                         {/*</a>*/}
                     {/*</div>*/}
                     <div className="navbar-menu">
-                        <Link to="/" className="navbar-item">Home</Link>
-                        <Link to="/" className="navbar-item main-logo">
-                            Travellers
-                        </Link>
                         <Link to="/trips" className="navbar-item">Trips</Link>
+                        <Link to="/" className="navbar-item main-logo">Travellers</Link>
+                        <Link to="/blog" className="navbar-item">Blog</Link>
                     </div>
                 </div>
 

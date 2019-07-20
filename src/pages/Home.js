@@ -3,34 +3,22 @@ import poster from '../assets/img/poster.jpg';
 import img1 from '../assets/img/img1.jpg';
 
 import video from '../assets/video/video.mp4';
-import {getTrips} from "../store/actions";
+import {getTrips} from "../store/actions/trips";
 
-// import trips from '../const/trips';
 import TripsGrid from "../components/TripsGrid";
 import {connect} from "react-redux";
-
-const mapStateToProps = state => (
-    {
-        trips: state.trips,
-    }
-);
-
-const mapDispatchToProps = (dispatch) => (
-    {
-        getTrips: filter => dispatch(getTrips(filter)),
-    }
-);
 
 function Homepage ({getTrips, trips}) {
 
     useEffect(() => {
         getTrips();
-    });
+    }, []);
 
     return (
         <>
             <section className="home-section">
-                <div className="main-banner">
+
+                <div className="main-banner travel-section">
                     <h1>Welcome to paradise</h1>
                     <div className="video-wrapper">
                         <div className="video-overlay"/>
@@ -40,42 +28,40 @@ function Homepage ({getTrips, trips}) {
                     </div>
                 </div>
 
-                <div className="section">
-                    <h2 className="is-size-3 has-text-centered">Explore Our Most Popular Tours</h2>
+                <div className="section travel-section">
+                    <h2 className="is-size-3 label-in-lines">Explore Our Most Popular Tours</h2>
                     <TripsGrid trips={trips}/>
                     <div className="has-text-centered mt60">
                         <a className="button is-primary is-medium is-centered">See more</a>
                     </div>
                 </div>
 
-                <div className="columns image-with-description">
-
-                    <div className="column">
-                        <img src={img1} className="image"/>
-                    </div>
-
-                    <div className="column description">
-
-                        <h3 className="is-size-3 mb20">Liberty Travel’s Exclusive Exotic Vacations</h3>
-
-                        <div className="mb20">
-                            Journeys: Visiting Africa, Asia, New Zealand, Australia, the United Arab Emirates, the South Pacific, the Indian Ocean, or South America? Liberty Travel’s Journeys take you
-                            to
-                            exotic destinations around the world, with your Travel Butler caring for every detail, every step of the way.
+                <div className="travel-section">
+                    <div className="columns image-with-description">
+                        <div className="column">
+                            <img src={img1} className="image"/>
                         </div>
-                        <div>
-                            Escapes: Whether you want to explore the exotic beaches of the Caribbean, delve deeper into Mayan culture in Mexico, explore the rainforest in Costa Rica, or go diving in
-                            Hawaii, Liberty Travel’s escapes take your exotic vacation to the next level with authentic local experiences and guided adventures. Plus, you get access to Liberty
-                            Travel’s
-                            personal concierge and 24-hour emergency priority access.
-                            CITYbreaks: The exotic can also be a new city to explore. Whether you want to discover Reykjavik or the catacombs of Rome, Liberty Travel matches you with a City Insider, a
-                            local guide.
+
+                        <div className="column description">
+
+                            <h3 className="is-size-3 label-with-line">Travellers Exclusive Exotic Vacations</h3>
+
+                            <div className="mb20">
+                                Journeys: Visiting Africa, Asia, New Zealand, Australia, the United Arab Emirates, the South Pacific, the Indian Ocean, or South America? Liberty Travel’s Journeys take you
+                                to
+                                exotic destinations around the world, with your Travel Butler caring for every detail, every step of the way.
+                            </div>
+                            <div>
+                                Escapes: Whether you want to explore the exotic beaches of the Caribbean, delve deeper into Mayan culture in Mexico, explore the rainforest in Costa Rica, or go diving in
+                                Hawaii, Liberty Travel’s escapes take your exotic vacation to the next level with authentic local experiences and guided adventures.
+                            </div>
                         </div>
                     </div>
+
                 </div>
 
-                <div className="section features">
-                    <h3 className="is-size-3 mb20 has-text-centered">Cruise Vacation Packages</h3>
+                <div className="section features travel-section">
+                    <h3 className="is-size-3 label-in-lines">Cruise Vacation Packages</h3>
                     <ul>
                         <li>
                             <span className="label">All Inclusive</span>
@@ -113,10 +99,34 @@ function Homepage ({getTrips, trips}) {
                 </div>
 
 
+                <div className="quote">
+                    “The most beautiful in the world is, of course, the world itself.” – Wallace Stevens
+                </div>
+
+                <div className="section travel-section about">
+                    <h3 className="is-size-3 label-in-lines">About us</h3>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis enim illo ipsa laboriosam laborum minima natus repellendus sapiente sequi? A accusamus commodi iste molestiae pariatur quo reiciendis sequi!
+                    <br />
+                    <br />
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad delectus dolores fugiat laborum reprehenderit ullam, veniam voluptatibus. Adipisci dolores earum nesciunt obcaecati, quae reiciendis saepe sunt? Est molestiae, quas?
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid animi beatae debitis distinctio ducimus error incidunt iusto modi mollitia natus, nihil perferendis provident quasi quis quisquam quos reprehenderit tempora voluptates!
+                </div>
             </section>
         </>
     )
 }
 
-const Home = connect(mapStateToProps, mapDispatchToProps)(Homepage);
-export default Home;
+const mapStateToProps = state => (
+    {
+        trips: state.trips.trips,
+    }
+);
+
+const mapDispatchToProps = (dispatch) => (
+    {
+        getTrips: filter => dispatch(getTrips(filter)),
+    }
+);
+
+export default connect(mapStateToProps, mapDispatchToProps)(Homepage);
+

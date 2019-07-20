@@ -1,16 +1,16 @@
 import React from 'react';
 import {connect} from "react-redux";
-import {filterTrips} from "../store/actions";
+import {filterTrips} from "../store/actions/trips";
 import StarRating from "./StarRating";
 
 
 const mapStateToProps = state => (
     {
-        filteredTrips: state.filteredTrips,
-        minCost: state.minCost,
-        maxCost: state.maxCost,
-        minPeriod: state.minPeriod,
-        maxPeriod: state.maxPeriod
+        filteredTrips: state.trips.filteredTrips,
+        minCost: state.trips.minCost,
+        maxCost: state.trips.maxCost,
+        minPeriod: state.trips.minPeriod,
+        maxPeriod: state.trips.maxPeriod
     }
 );
 
@@ -61,7 +61,7 @@ function TripsFilter ({filteredTrips, filterTrips, minCost, maxCost, minPeriod, 
     function setRangeFill(value, minValue, maxValue) {
         let fillPercentage = ((value - minValue) / (maxValue - minValue)) * 100;
         return {
-            background: `linear-gradient(90deg, rgb(117, 252, 117) ${fillPercentage}%, rgb(214,214,214) 0%)`
+            background: `linear-gradient(90deg, #5F65AF ${fillPercentage}%, rgb(214,214,214) 0%)`
         }
     }
 
