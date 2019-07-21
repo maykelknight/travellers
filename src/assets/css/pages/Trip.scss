@@ -17,6 +17,7 @@
     margin-bottom: 100px;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+
     ul {
       li {
         &::before {
@@ -39,7 +40,7 @@
   &__promo {
     font-size: 20px;
     margin: 100px 0;
-    text-align:  center;
+    text-align: center;
     height: 240px;
     background-size: cover;
     display: flex;
@@ -49,8 +50,11 @@
     color: #fff;
     font-weight: 600;
     box-shadow: 0 16px 14px -14px grey;
-  }
 
+    @include until($desktop) {
+      background-attachment: scroll;
+    }
+  }
 
 
 }
