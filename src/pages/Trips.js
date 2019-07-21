@@ -40,7 +40,7 @@ function Trips ({filteredTrips, getTrips}) {
                 </div>
 
                 <div className="column">
-                    <div className="section has-text-centered">
+                    <div className="section has-text-centered is-hidden-mobile">
                         {searchInfo}
                     </div>
                     <TripsGrid trips={filteredTrips}/>

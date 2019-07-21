@@ -28,7 +28,6 @@ export default function Post (props) {
                     <p className="post-page__description__text mt20">{post.description}</p>
                     <p className="post-page__description__text mt20">{post.description}</p>
 
-
                 </div>
             </div>
         )

@@ -30,7 +30,7 @@ export default function Blog () {
     return (
         <>
             <div className="container blog-page">
-                <div className="section">
+                <div>
                     {categoriesList}
                 </div>
                 <div>

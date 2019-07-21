@@ -24,7 +24,7 @@ function Trip (props) {
                         <ImageSlider images={trip.images}/>
                     </div>
                     <div className="column">
-                        <h2 className="is-size-3 label-with-line">{trip.place}</h2>
+                        <h2 className="is-size-3 is-size-4-mobile label-with-line">{trip.place}</h2>
                         <p>{trip.description}</p>
                     </div>
                 </div>
@@ -35,7 +35,7 @@ function Trip (props) {
             <div className="section trip-page__extras">
                 <div className="columns ">
                     <div className="column">
-                        <h2 className="is-size-4 label-with-line">Extras</h2>
+                        <h2 className="is-size-3 is-size-4-mobile label-with-line">Extras</h2>
                         <ul>
                             {trip.extras.map(extra => <li>{extra}</li>)}
                         </ul>
@@ -51,8 +51,8 @@ function Trip (props) {
             <div className="container">
                 {firstSection}
 
-                <div className="trip-page__description">
-                    <div className="has-text-weight-bold is-size-4 label-in-lines">The deal</div>
+                <div className="section trip-page__description">
+                    <div className="has-text-weight-bold is-size-3 is-size-4-mobile label-in-lines">The deal</div>
                     <div>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid asperiores commodi cupiditate deleniti dignissimos dolorem ducimus enim fuga magnam nesciunt nulla numquam, officiis praesentium quidem repellat similique tempora veritatis vero.
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid culpa est ipsam numquam obcaecati praesentium repudiandae velit! Blanditiis deleniti ducimus eligendi, est facilis ipsum quam tempore ullam voluptas voluptates. Assumenda.
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur eaque earum eligendi eum hic illum in laboriosam, laborum nihil optio perferendis porro, possimus praesentium quasi reiciendis similique soluta sunt, vitae?
@@ -61,8 +61,8 @@ function Trip (props) {
 
                 {secondSection}
 
-                <div className="trip-page__description">
-                    <div className="has-text-weight-bold is-size-4 label-in-lines">Whats included</div>
+                <div className="section trip-page__description">
+                    <div className="has-text-weight-bold is-size-3 is-size-4-mobile label-in-lines">Whats included</div>
                     <div>Lorem ipsum orem ducimus enim fuga magnam nesciunt nulla numquam, officiis praesentium quidem repellat similique tempora veritatis vero.
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid culpa est ipsam numquam obcaecati praesentium repudiandae velit! Blanditiis
                         deleniti ducimus eligendi, est facilis ipsum quam tempore ullam voluptas voluptates. Assumenda.

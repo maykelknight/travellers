@@ -30,7 +30,7 @@ function Homepage ({getTrips, trips}) {
                 </div>
 
                 <div className="section travel-section">
-                    <h2 className="is-size-3 label-in-lines">Explore Our Most Popular Tours</h2>
+                    <h2 className="is-size-3 is-size-4-mobile label-in-lines">Explore Our Most Popular Tours</h2>
                     <TripsGrid trips={trips}/>
                     <div className="has-text-centered mt60">
 
@@ -64,7 +64,7 @@ function Homepage ({getTrips, trips}) {
                 </div>
 
                 <div className="section features travel-section">
-                    <h3 className="is-size-3 label-in-lines">Cruise Vacation Packages</h3>
+                    <h3 className="is-size-3 is-size-4-mobile label-in-lines">Cruise Vacation Packages</h3>
                     <ul>
                         <li>
                             <span className="label">All Inclusive</span>
@@ -107,7 +107,7 @@ function Homepage ({getTrips, trips}) {
                 </div>
 
                 <div className="section travel-section about">
-                    <h3 className="is-size-3 label-in-lines">About us</h3>
+                    <h3 className="is-size-3 is-size-4-mobile label-in-lines">About us</h3>
                     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid blanditiis enim illo ipsa laboriosam laborum minima natus repellendus sapiente sequi? A accusamus commodi iste molestiae pariatur quo reiciendis sequi!
                     <br />
                     <br />

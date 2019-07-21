@@ -6,7 +6,6 @@
     height: 100vh;
     position: relative;
     overflow: hidden;
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -15,7 +14,10 @@
       position: absolute;
       top: 0;
       left: 0;
-      width: 100%;
+
+      video {
+        max-width: initial;
+      }
 
       .video-overlay {
         position: absolute;
@@ -33,6 +35,11 @@
       font-size: 60px;
       z-index: 1;
       padding: 20px;
+      opacity: 0.8;
+
+      @include until($desktop) {
+        font-size: 25px;
+      }
     }
   }
 
@@ -40,24 +47,27 @@
     max-width: 850px;
     margin: 0 auto;
   }
-.quote {
-  font-size: 20px;
-  margin: 100px 0;
-  text-align:  center;
-  height: 240px;
-  background-size: cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: url(../img/trip-wave.jpg) no-repeat fixed center;
-  color: #fff;
-  font-weight: 600;
-  box-shadow: 0 16px 14px -14px grey;
-}
+
+  .quote {
+    font-size: 20px;
+    margin: 100px 0;
+    text-align: center;
+    height: 240px;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../img/trip-wave.jpg) no-repeat fixed center;
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 16px 14px -14px grey;
+  }
+
   .image-with-description {
     background: $light-gray;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
+
     .column {
       padding: 0;
     }
@@ -67,12 +77,17 @@
       display: flex;
       flex-direction: column;
       padding: 0 60px;
+
+      @include until($desktop) {
+        padding: 60px;
+      }
     }
   }
 
   .features {
     max-width: 900px;
     margin: 0 auto;
+
     ul {
       padding: 0;
       margin: 0;
@@ -80,7 +95,7 @@
       flex-wrap: wrap;
 
       li {
-        min-width: 300px;
+        min-width: 320px;
         flex: 1 0 21%;
         border: 1px solid #ccc;
         padding: 10px;
@@ -98,7 +113,14 @@
           box-shadow: 0 40px 40px 0 rgba(0, 0, 0, 0.16);
         }
 
+        @include until($desktop) {
+          min-width: 225px;
+        }
       }
     }
   }
 }
+
+
+
+

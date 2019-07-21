@@ -1,6 +1,10 @@
 @import "./common.scss";
+
 @import "./utils/bulma";
 @import "~bulma/bulma.sass";
+
+@import "./utils/helpers";
+@import "./utils/colors";
 
 @import "./pages/Home";
 @import "./pages/Trip";
@@ -19,4 +23,3 @@
 
 @import "./commons/margins";
 
-@import "./utils/colors";

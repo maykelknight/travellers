@@ -44,6 +44,10 @@
     margin-top: 40px;
     color: $secondary;
   }
+
+  @include until($tablet) {
+    height: auto;
+  }
 }
 
 .range-slider {

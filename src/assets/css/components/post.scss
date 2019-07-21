@@ -3,13 +3,17 @@
 .blog-post {
   flex: 1;
   height: 300px;
-  background: black;
   margin: 10px;
   background-size: cover;
   position: relative;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.02, 0.01, 0.47, 1);
   background-position: center;
+
+  @include until($tablet) {
+    flex: auto;
+    width: 100%;
+  }
 
   &:hover {
     transform: translateY(-15px);

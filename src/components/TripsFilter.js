@@ -74,7 +74,7 @@ function TripsFilter ({filteredTrips, filterTrips, minCost, maxCost, minPeriod, 
             {/*Location*/}
             <div className="trip-filters__section">
                 <div className="filter-label">
-                    <h3 className="is-size-6">Location</h3>
+                    <h3 className="is-size-6 is-size-7-tablet">Location</h3>
                 </div>
                 <input type="text" value={place} name="place" onChange={onPlaceInput}/>
             </div>
@@ -83,8 +83,8 @@ function TripsFilter ({filteredTrips, filterTrips, minCost, maxCost, minPeriod, 
             <div className="trip-filters__section">
 
                 <div className="filter-label">
-                    <h3 className="is-size-6">Max price:</h3>
-                    <span className="has-text-weight-bold">{maxPrice}$</span>
+                    <h3 className="is-size-6 is-size-7-tablet">Max price:</h3>
+                    <span className="has-text-weight-bold is-size-7-tablet">{maxPrice}$</span>
                 </div>
                 <input type="range"
                        className="range-slider"
@@ -100,8 +100,8 @@ function TripsFilter ({filteredTrips, filterTrips, minCost, maxCost, minPeriod, 
             {/*period in days*/}
             <div className="trip-filters__section">
                 <div className="filter-label">
-                    <h3 className="is-size-6">Minimal period:</h3>
-                    <span className="has-text-weight-bold">{periodInDays} days</span>
+                    <h3 className="is-size-6 is-size-7-tablet">Minimal period:</h3>
+                    <span className="has-text-weight-bold is-size-7-tablet">{periodInDays} days</span>
                 </div>
                 <input className="range-slider"
                        type="range"
@@ -118,7 +118,7 @@ function TripsFilter ({filteredTrips, filterTrips, minCost, maxCost, minPeriod, 
             {/*hotel stars*/}
             <div className="trip-filters__section">
                 <div className="filter-label">
-                    <h3 className="is-size-6">Minimal rating</h3>
+                    <h3 className="is-size-6 is-size-7-tablet">Minimal rating</h3>
                 </div>
                 <StarRating onRatingChange={onRatingChange}/>
             </div>
